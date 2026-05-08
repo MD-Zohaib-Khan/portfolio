@@ -1,0 +1,423 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  ExternalLink,
+  Github,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import Image from "next/image";
+
+export default function Projects() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [activeImage, setActiveImage] = useState(0);
+
+  const openModal = (project: any) => {
+    setSelectedProject(project);
+    setActiveImage(0);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = "auto";
+  };
+
+  const nextImage = () => {
+    setActiveImage((prev) =>
+      prev === selectedProject.gallery.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const prevImage = () => {
+    setActiveImage((prev) =>
+      prev === 0 ? selectedProject.gallery.length - 1 : prev - 1,
+    );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedProject) return;
+
+      if (e.key === "ArrowRight") {
+        nextImage();
+      }
+
+      if (e.key === "ArrowLeft") {
+        prevImage();
+      }
+
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProject]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  };
+
+  const projects = [
+    {
+      title: "Totality Software",
+      description:
+        "A debt collection software that manage tasks, deadlines, and more with our tickler queue system.",
+      image: "💰",
+      tags: ["React", "TypeScript", "MongoDB", "Prisma"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/totality1.png",
+        "/projects/totality2.png",
+        "/projects/totality3.png",
+        "/projects/totality4.png",
+        "/projects/totality5.png",
+        "/projects/totality6.png",
+      ],
+    },
+    {
+      title: "Campus Management System",
+      description:
+        "A complete role based Campus Management System for universities and colleges.",
+      image: "🎓",
+      tags: ["React", "JavaScript", "Node.js", "SQL Server"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/CMS1.png",
+        "/projects/CMS2.png",
+        "/projects/CMS3.png",
+        "/projects/CMS4.png",
+        "/projects/CMS5.png",
+        "/projects/CMS6.png",
+        "/projects/CMS7.png",
+      ],
+    },
+    {
+      title: "Explore GPGC",
+      description:
+        "An exploring portal for my graduation college, Government PostGraduate College Kohat.",
+      image: "📚",
+      tags: ["React", "JavaScript", "PHP", "MySQL"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/gpgc1.png",
+        "/projects/gpgc2.png",
+        "/projects/gpgc3.png",
+        "/projects/gpgc4.png",
+        "/projects/gpgc5.png",
+        "/projects/gpgc6.png",
+        "/projects/gpgc7.png",
+        "/projects/gpgc8.png",
+        "/projects/gpgc9.png",
+        "/projects/gpgc10.png",
+      ],
+    },
+    {
+      title: "Wild Oasis Hotel",
+      description:
+        "A helful platform for visitors to book restrooms for themselves and their loved ones.",
+      image: "🏩",
+      tags: ["React", "JavaScript", "Vercel", "Supabase"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/hotel1.png",
+        "/projects/hotel2.png",
+        "/projects/hotel3.png",
+        "/projects/hotel4.png",
+        "/projects/hotel5.png",
+        "/projects/hotel6.png",
+      ],
+    },
+    {
+      title: "Fee Management System",
+      description:
+        "Build a user-friendly fee management system for a renowned institution.",
+      image: "💵",
+      tags: ["React", "JavaScript", "Node.js", "SQL Server"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/fee1.png",
+        "/projects/fee2.png",
+        "/projects/fee3.png",
+        "/projects/fee4.png",
+        "/projects/fee5.png",
+        "/projects/fee6.png",
+        "/projects/fee7.png",
+      ],
+    },
+    {
+      title: "Job Portal Pro",
+      description:
+        "Connect with top employers and discover thousands of job opportunities with Job Portal Pro.",
+      image: "🔎",
+      tags: ["React", "JavaScript", "PHP", "MySQL"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/job1.png",
+        "/projects/job2.png",
+        "/projects/job3.png",
+        "/projects/job4.png",
+        "/projects/job5.png",
+      ],
+    },
+  ];
+
+  return (
+    <>
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            {/* Header */}
+            <motion.div variants={itemVariants} className="mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <span className="text-foreground">Featured </span>
+                <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Projects
+                </span>
+              </h2>
+
+              <div className="h-1 w-20 bg-linear-to-r from-primary to-accent rounded-full" />
+            </motion.div>
+
+            {/* Projects */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ y: -10 }}
+                  onClick={() => openModal(project)}
+                  className="group cursor-pointer bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
+                >
+                  {/* Image Area */}
+                  <div className="relative h-52 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                    <motion.span
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      className="text-8xl opacity-40 group-hover:opacity-60 transition-opacity"
+                    >
+                      {project.image}
+                    </motion.span>
+
+                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                    {/* View Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold tracking-wide">
+                        View Project
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-foreground/60 text-sm mb-5 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="px-3 py-1 bg-primary/15 text-primary text-xs rounded-full font-medium border border-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex gap-3 pt-4 border-t border-border">
+                      <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openModal(project);
+                        }}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary text-primary hover:text-primary-foreground rounded-lg transition-all font-semibold text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </motion.button>
+
+                      <motion.a
+                        href={project.links.github}
+                        onClick={(e) => e.stopPropagation()}
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-border hover:border-primary text-foreground hover:text-primary rounded-lg transition-all font-semibold text-sm"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </motion.a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* MODAL */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+            className="fixed inset-0 z-999 bg-black/70 backdrop-blur-md flex items-center justify-center overflow-y-auto lg:overflow-hidden px-4 py-6"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.85, y: 40 }}
+              transition={{
+                type: "spring",
+                stiffness: 120,
+                damping: 18,
+              }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl bg-card border border-white/10 rounded-3xl overflow-hidden shadow-2xl lg:max-h-[92vh]"
+            >
+              {/* Glow */}
+              <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/10 pointer-events-none" />
+
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-primary transition-all"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Main Image */}
+              <div className="relative h-60 sm:h-85 lg:h-90 w-full overflow-hidden">
+                <motion.div
+                  key={activeImage}
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative h-full w-full"
+                >
+                  <Image
+                    src={selectedProject.gallery[activeImage]}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* Project Title */}
+                <div className="absolute bottom-6 left-6 z-10">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                    {selectedProject.title}
+                  </h2>
+
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tags.map((tag: string, idx: number) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Navigation */}
+                {selectedProject.gallery.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {/* Bottom Section */}
+              <div className="p-6 sm:p-8">
+                <p className="text-foreground/70 leading-relaxed text-sm sm:text-base">
+                  {selectedProject.description}
+                </p>
+
+                {/* Thumbnails */}
+                <div className="flex gap-3 mt-6 overflow-x-auto pb-2">
+                  {selectedProject.gallery.map((img: string, idx: number) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(idx)}
+                      className={`relative min-w-22.5 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                        activeImage === idx
+                          ? "border-primary scale-105"
+                          : "border-transparent opacity-70 hover:opacity-100"
+                      }`}
+                    >
+                      <Image src={img} alt="" fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
