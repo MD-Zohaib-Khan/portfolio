@@ -31,43 +31,40 @@ export default function Experience() {
 
   const experiences = [
     {
-      role: "Full Stack Developer",
-      company: "Professional & Freelance Projects",
+      role: "Full Stack Developer & AI Automation",
+      company: "Freelance & Professional Projects",
       duration: "2025 - Current",
       description:
-        "Currently building complete full-stack applications with modern technologies, combining frontend and backend expertise to create scalable and production-ready solutions.",
+        "Designing and deploying AI-powered automation agents using n8n, integrating LLM APIs (Claude, OpenAI, Gemini) and vector databases for complex business workflows.",
 
       achievements: [
         "Built Totality Software with task queues, deadlines, and debt collection workflows",
-        "Built the Explore GPGC platform for showcasing college information and activities",
-        "Developed full-stack hotel booking and job portal applications",
-        "Integrated modern UI/UX, APIs, databases, and deployment workflows into complete systems",
+        "Deployed AI agents for trend tracking, competitive analysis, and report generation",
+        "Integrated Stripe for payments and Supabase for real-time operations",
       ],
     },
     {
-      role: "Back-End Developer",
-      company: "Learning & Professional Projects",
-      duration: "Mid 2024 - 2025",
+      role: "Back-End Developer Intern",
+      company: "Brandora, Kohat",
+      duration: "Jun 2025 - Present",
       description:
-        "Worked on server-side development, APIs, authentication systems, and database management. Built scalable backend solutions for management systems and enterprise applications.",
+        "Designing RESTful APIs and implementing JWT-based role-based access control (RBAC) for enterprise-level management systems.",
 
       achievements: [
-        "Developed APIs and backend modules for Campus Management and Fee Management Systems",
-        "Worked with SQL Server, MySQL, MongoDB, Prisma, and Node.js",
-        "Implemented authentication, role-based access, and data management systems",
+        "Built secure modules for Campus and Fee Management Systems",
+        "Collaborated on seamless frontend-to-backend API integrations",
       ],
     },
     {
       role: "Front-End Developer",
-      company: "Personal & Academic Projects",
-      duration: "2023 - Mid 2024",
+      company: "KUST, Kohat",
+      duration: "2024 - May 2025",
       description:
-        "Focused on building modern, responsive, and user-friendly interfaces using React and JavaScript. Developed multiple frontend applications with clean UI designs, animations, and responsive layouts.",
+        "Developed reusable React components and interactive dashboards following UX best practices.",
 
       achievements: [
-        "Built multiple sites while working with backend developers.",
-        "Developed responsive interfaces with React, Tailwind CSS, and JavaScript",
-        "Created interactive dashboards, forms, tables, and reusable UI components",
+        "Built responsive interfaces with React, Tailwind CSS, and JQuery",
+        "Optimized college portal (Explore GPGC) for better discoverability",
       ],
     },
   ];

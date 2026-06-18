@@ -74,7 +74,7 @@ export default function About() {
               {/* 🔥 IMAGE CARD */}
               <motion.div
                 variants={itemVariants}
-                whileHover={{ rotateY: 8, rotateX: 4 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 120 }}
                 className="relative flex justify-center"
               >
@@ -137,9 +137,11 @@ export default function About() {
 
                     {/* Name */}
                     <div className="absolute bottom-4 left-4 z-20">
-                      <p className="text-white font-semibold text-lg">Zohaib Khan</p>
+                      <p className="text-white font-semibold text-lg">
+                        Zohaib Khan
+                      </p>
                       <p className="text-xs text-white/70">
-                        MERN Stack Developer
+                        Full Stack & AI Specialist
                       </p>
                     </div>
                   </div>
@@ -160,13 +162,22 @@ export default function About() {
               {/* TEXT */}
               <motion.div variants={itemVariants} className="space-y-6">
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  I&apos;m a passionate full-stack developer with a strong
-                  belief in collaborative development. My mindset is simple —
-                  build with people, not just for them.
+                  I am a results-driven{" "}
+                  <span className="font-semibold">
+                    Full Stack MERN Developer
+                  </span>{" "}
+                  and{" "}
+                  <span className="font-semibold">
+                    AI Automation Specialist
+                  </span>{" "}
+                  with 3+ years of experience building scalable applications and
+                  intelligent automated workflows.
                 </p>
 
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  I specialize in crafting scalable backend systems and
+                  I specialize in designing{" "}
+                  <span className="font-semibold">AI Agents</span>,{" "}
+                  <span className="font-semibold">RAG Pipelines</span>, and
                   intuitive frontend experiences that actually feel good to use.
                 </p>
 

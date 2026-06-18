@@ -90,12 +90,39 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Pakistani Law RAG Agent",
+      description:
+        "AI chat agent specialized in Pakistani law using a Cohere-embedding RAG pipeline with Groq and Gemini LLMs.",
+      image: "⚖️",
+      tags: ["n8n", "Supabase", "Groq", "Gemini", "Lovable"],
+      links: { demo: "#", github: "#" },
+      gallery: ["/projects/law1.png", "/projects/law2.png", "/projects/law3.png", "/projects/law4.png", "/projects/law5.png"],
+    },
+    {
+      title: "Social Media Trends Tracker",
+      description:
+        "A 16-node automation pipeline tracking trends across Reddit, X, and Instagram with AI summaries and auto-publishing.",
+      image: "📈",
+      tags: ["n8n", "Claude AI", "API Integration", "Automation"],
+      links: { demo: "#", github: "#" },
+      gallery: ["/projects/trend1.png", "/projects/trend2.png", "/projects/trend3.png"],
+    },
+    {
+      title: "YouTube Video Data Extractor",
+      description:
+        "Automated workflow extracting metadata and transcripts to generate AI summaries and key learning points.",
+      image: "🎥",
+      tags: ["n8n", "Apify", "Groq LLM", "Airtable"],
+      links: { demo: "#", github: "#" },
+      gallery: ["/projects/yt1.png", "/projects/yt2.png", "/projects/yt3.png", "/projects/yt4.png"],
+    },
+    {
       title: "Totality Software",
       description:
-        "A debt collection software that manage tasks, deadlines, and more with our tickler queue system.",
+        "Enterprise debt collection platform with tickler queues, workflow automation, and Stripe integration.",
       image: "💰",
-      tags: ["React", "TypeScript", "MongoDB", "Prisma"],
-      links: { demo: "#", github: "#" },
+      tags: ["React", "TypeScript", "MongoDB", "Prisma", "Stripe"],
+      links: { demo: "#", github: "https://github.com/MD-Zohaib-Khan" },
       gallery: [
         "/projects/totality1.png",
         "/projects/totality2.png",
@@ -140,54 +167,6 @@ export default function Projects() {
         "/projects/gpgc8.png",
         "/projects/gpgc9.png",
         "/projects/gpgc10.png",
-      ],
-    },
-    {
-      title: "Wild Oasis Hotel",
-      description:
-        "A helful platform for visitors to book restrooms for themselves and their loved ones.",
-      image: "🏩",
-      tags: ["React", "JavaScript", "Vercel", "Supabase"],
-      links: { demo: "#", github: "#" },
-      gallery: [
-        "/projects/hotel1.png",
-        "/projects/hotel2.png",
-        "/projects/hotel3.png",
-        "/projects/hotel4.png",
-        "/projects/hotel5.png",
-        "/projects/hotel6.png",
-      ],
-    },
-    {
-      title: "Fee Management System",
-      description:
-        "Build a user-friendly fee management system for a renowned institution.",
-      image: "💵",
-      tags: ["React", "JavaScript", "Node.js", "SQL Server"],
-      links: { demo: "#", github: "#" },
-      gallery: [
-        "/projects/fee1.png",
-        "/projects/fee2.png",
-        "/projects/fee3.png",
-        "/projects/fee4.png",
-        "/projects/fee5.png",
-        "/projects/fee6.png",
-        "/projects/fee7.png",
-      ],
-    },
-    {
-      title: "Job Portal Pro",
-      description:
-        "Connect with top employers and discover thousands of job opportunities with Job Portal Pro.",
-      image: "🔎",
-      tags: ["React", "JavaScript", "PHP", "MySQL"],
-      links: { demo: "#", github: "#" },
-      gallery: [
-        "/projects/job1.png",
-        "/projects/job2.png",
-        "/projects/job3.png",
-        "/projects/job4.png",
-        "/projects/job5.png",
       ],
     },
   ];

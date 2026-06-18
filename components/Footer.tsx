@@ -37,7 +37,11 @@ export default function Footer() {
       label: "LinkedIn",
     },
     { icon: Twitter, href: "https://x.com/iTheZohaibKhan", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@zohaibkhan.com", label: "Email" },
+    {
+      icon: Mail,
+      href: "mailto:zohaibtheprogrammer@gmail.com",
+      label: "Email",
+    },
   ];
 
   const navLinks = [
@@ -50,7 +54,8 @@ export default function Footer() {
 
   const services = [
     "Full Stack Development",
-    "Maintenance",
+    "AI Automation",
+    "Software Maintenance",
     "Web Design",
     "Consulting",
     "Team Mentoring",
@@ -100,7 +105,7 @@ export default function Footer() {
                 Zohaib Khan
               </h3>
               <p className="text-[11px] font-medium tracking-[0.16em] uppercase text-foreground/35 mt-0.5">
-                Full Stack Developer
+                Full Stack & AI Specialist
               </p>
             </div>
 
@@ -223,7 +228,7 @@ export default function Footer() {
 
             {/* Motto */}
             <p className="text-[11px] text-foreground/30 italic pt-1">
-              "I with the We Mentality"
+              "I, with the We Mentality"
             </p>
           </motion.div>
         </motion.div>

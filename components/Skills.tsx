@@ -31,45 +31,31 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "AI Automation",
+      color: "from-emerald-500 to-teal-500",
+      skills: [
+        "n8n",
+        "AI Agents",
+        "RAG Pipelines",
+        "LLMs (Claude, OpenAI)",
+        "Workflows",
+        "Vector DBs",
+        "Apify",
+      ],
+    },
+    {
+      title: "Development",
       color: "from-primary to-blue-500",
       skills: [
         "React",
         "TypeScript",
-        "Tailwind CSS",
-        "BootStrap",
-        "HTML",
-        "CSS",
         "JavaScript",
-        "JQuery",
-      ],
-    },
-    {
-      title: "Backend",
-      color: "from-accent to-orange-500",
-      skills: [
         "Node.js",
         "Express",
         "Hapi",
         "Mongoose",
         "REST APIs",
         "Prisma",
-        "Redis",
-      ],
-    },
-    {
-      title: "Tools & Platforms",
-      color: "from-blue-500 to-cyan-500",
-      skills: [
-        "Git",
-        "GitHub",
-        "AWS",
-        "Vercel",
-        "Stripe",
-        "Supabase",
-        "Postman",
-        "VS Code",
-        "Swagger",
       ],
     },
     {
@@ -82,6 +68,22 @@ export default function Skills() {
         "MySQL",
         "Cassandra",
         "SQLite",
+        "Redis"
+      ],
+    },
+    {
+      title: "Tools & Platforms",
+      color: "from-blue-500 to-cyan-500",
+      skills: [
+        "Git",
+        "GitHub",
+        "AWS",
+        "Stripe",
+        "Postman",
+        "Vercel",
+        "Supabase",
+        "Firebase",
+        "Swagger",
       ],
     },
   ];
