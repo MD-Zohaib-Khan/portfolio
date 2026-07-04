@@ -90,36 +90,9 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Pakistani Law RAG Agent",
-      description:
-        "AI chat agent specialized in Pakistani law using a Cohere-embedding RAG pipeline with Groq and Gemini LLMs.",
-      image: "⚖️",
-      tags: ["n8n", "Supabase", "Groq", "Gemini", "Lovable"],
-      links: { demo: "#", github: "#" },
-      gallery: ["/projects/law1.png", "/projects/law2.png", "/projects/law3.png", "/projects/law4.png", "/projects/law5.png"],
-    },
-    {
-      title: "Social Media Trends Tracker",
-      description:
-        "A 16-node automation pipeline tracking trends across Reddit, X, and Instagram with AI summaries and auto-publishing.",
-      image: "📈",
-      tags: ["n8n", "Claude AI", "API Integration", "Automation"],
-      links: { demo: "#", github: "#" },
-      gallery: ["/projects/trend1.png", "/projects/trend2.png", "/projects/trend3.png"],
-    },
-    {
-      title: "YouTube Video Data Extractor",
-      description:
-        "Automated workflow extracting metadata and transcripts to generate AI summaries and key learning points.",
-      image: "🎥",
-      tags: ["n8n", "Apify", "Groq LLM", "Airtable"],
-      links: { demo: "#", github: "#" },
-      gallery: ["/projects/yt1.png", "/projects/yt2.png", "/projects/yt3.png", "/projects/yt4.png"],
-    },
-    {
       title: "Totality Software",
       description:
-        "Enterprise debt collection platform with tickler queues, workflow automation, and Stripe integration.",
+        "Enterprise debt collection platform with tickler queues, automations, and Stripe integration.",
       image: "💰",
       tags: ["React", "TypeScript", "MongoDB", "Prisma", "Stripe"],
       links: { demo: "#", github: "https://github.com/MD-Zohaib-Khan" },
@@ -137,7 +110,7 @@ export default function Projects() {
       description:
         "A complete role based Campus Management System for universities and colleges.",
       image: "🎓",
-      tags: ["React", "JavaScript", "Node.js", "SQL Server"],
+      tags: ["React", "JavaScript", "Node.js", "Express", "SQL Server"],
       links: { demo: "#", github: "#" },
       gallery: [
         "/projects/CMS1.png",
@@ -154,7 +127,7 @@ export default function Projects() {
       description:
         "An exploring portal for my graduation college, Government PostGraduate College Kohat.",
       image: "📚",
-      tags: ["React", "JavaScript", "PHP", "MySQL"],
+      tags: ["React", "JavaScript", "Tailwind CSS", "PHP", "MySQL"],
       links: { demo: "#", github: "#" },
       gallery: [
         "/projects/gpgc1.png",
@@ -167,6 +140,48 @@ export default function Projects() {
         "/projects/gpgc8.png",
         "/projects/gpgc9.png",
         "/projects/gpgc10.png",
+      ],
+    },
+    {
+      title: "Pakistani Law RAG Agent",
+      description:
+        "AI chat agent specialized in Pakistani law using a Cohere-embedding RAG pipeline with Groq and Gemini LLMs.",
+      image: "⚖️",
+      tags: ["n8n", "Supabase", "Groq", "Gemini", "Lovable"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/law1.png",
+        "/projects/law2.png",
+        "/projects/law3.png",
+        "/projects/law4.png",
+        "/projects/law5.png",
+      ],
+    },
+    {
+      title: "Social Media Trends Tracker",
+      description:
+        "A 16-node automation pipeline tracking trends across Reddit, X, and Instagram with AI summaries and auto-publishing.",
+      image: "📈",
+      tags: ["n8n", "Claude AI", "API Integration", "Automation"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/trend1.png",
+        "/projects/trend2.png",
+        "/projects/trend3.png",
+      ],
+    },
+    {
+      title: "YouTube Video Data Extractor",
+      description:
+        "Automated workflow extracting metadata and transcripts to generate AI summaries and key learning points.",
+      image: "🎥",
+      tags: ["n8n", "Apify", "Groq LLM", "Airtable", "G-Mail"],
+      links: { demo: "#", github: "#" },
+      gallery: [
+        "/projects/yt1.png",
+        "/projects/yt2.png",
+        "/projects/yt3.png",
+        "/projects/yt4.png",
       ],
     },
   ];
@@ -183,14 +198,14 @@ export default function Projects() {
           >
             {/* Header */}
             <motion.div variants={itemVariants} className="mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
                 <span className="text-foreground">Featured </span>
-                <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 bg-clip-text text-transparent">
                   Projects
                 </span>
               </h2>
 
-              <div className="h-1 w-20 bg-linear-to-r from-primary to-accent rounded-full" />
+              <div className="h-1 w-20 bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 rounded-full" />
             </motion.div>
 
             {/* Projects */}
@@ -204,7 +219,7 @@ export default function Projects() {
                   className="group cursor-pointer bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
                 >
                   {/* Image Area */}
-                  <div className="relative h-52 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                  <div className="relative h-52 bg-linear-to-br from-emerald-500/20 via-teal-400/20 to-indigo-500/20 flex items-center justify-center overflow-hidden">
                     <motion.span
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 3, repeat: Infinity }}
@@ -225,7 +240,7 @@ export default function Projects() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-emerald-500 transition-colors">
                       {project.title}
                     </h3>
 
@@ -238,7 +253,7 @@ export default function Projects() {
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 bg-primary/15 text-primary text-xs rounded-full font-medium border border-primary/20"
+                          className="px-3 py-1 bg-sky-500/15 text-sky-400 text-xs rounded-full font-medium border border-primary/20"
                         >
                           {tag}
                         </span>
@@ -254,7 +269,7 @@ export default function Projects() {
                           e.stopPropagation();
                           openModal(project);
                         }}
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary text-primary hover:text-primary-foreground rounded-lg transition-all font-semibold text-sm"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-600 text-emerald-400 hover:text-emerald-100 rounded-lg transition-all font-semibold text-sm"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Demo
@@ -265,7 +280,7 @@ export default function Projects() {
                         onClick={(e) => e.stopPropagation()}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-border hover:border-primary text-foreground hover:text-primary rounded-lg transition-all font-semibold text-sm"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-border hover:border-emerald-500 text-foreground hover:text-emerald-500 rounded-lg transition-all font-semibold text-sm"
                       >
                         <Github className="w-4 h-4" />
                         Code
@@ -299,7 +314,7 @@ export default function Projects() {
                 damping: 18,
               }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl bg-card border border-white/10 rounded-3xl overflow-hidden shadow-2xl lg:max-h-[92vh]"
+              className="relative w-full max-w-5xl bg-card border border-white/10 rounded-3xl overflow-hidden shadow-2xl lg:max-h-[92vh] lg:overflow-y-auto"
             >
               {/* Glow */}
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/10 pointer-events-none" />
@@ -307,16 +322,16 @@ export default function Projects() {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-primary transition-all"
+                className="absolute top-4 right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-primary transition-all"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Main Image */}
-              <div className="relative h-60 sm:h-85 lg:h-90 w-full overflow-hidden">
+              {/* Main Image — clean, no text overlay, never cropped */}
+              <div className="relative h-56 sm:h-80 lg:h-96 w-full overflow-hidden bg-black/40">
                 <motion.div
                   key={activeImage}
-                  initial={{ opacity: 0, scale: 1.08 }}
+                  initial={{ opacity: 0, scale: 1.03 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                   className="relative h-full w-full"
@@ -325,53 +340,55 @@ export default function Projects() {
                     src={selectedProject.gallery[activeImage]}
                     alt={selectedProject.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </motion.div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Project Title */}
-                <div className="absolute bottom-6 left-6 z-10">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                    {selectedProject.title}
-                  </h2>
-
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tags.map((tag: string, idx: number) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {/* Subtle bottom fade only — no text sits on it anymore */}
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
 
                 {/* Navigation */}
                 {selectedProject.gallery.length > 1 && (
                   <>
                     <button
                       onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
+                      className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </button>
 
                     <button
                       onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
+                      className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white flex items-center justify-center hover:bg-primary transition-all"
                     >
                       <ChevronRight className="w-5 h-5" />
                     </button>
+
+                    {/* Image counter */}
+                    <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-medium">
+                      {activeImage + 1} / {selectedProject.gallery.length}
+                    </div>
                   </>
                 )}
               </div>
 
-              {/* Bottom Section */}
-              <div className="p-6 sm:p-8">
+              {/* Bottom Section — title, tags & description live here now */}
+              <div className="p-5 sm:p-8">
+                <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground mb-3">
+                  {selectedProject.title}
+                </h2>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedProject.tags.map((tag: string, idx: number) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 rounded-full bg-sky-500/15 border border-sky-500/20 text-sky-400 text-xs font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
                 <p className="text-foreground/70 leading-relaxed text-sm sm:text-base">
                   {selectedProject.description}
                 </p>
@@ -382,7 +399,7 @@ export default function Projects() {
                     <button
                       key={idx}
                       onClick={() => setActiveImage(idx)}
-                      className={`relative min-w-22.5 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                      className={`relative min-w-22.5 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
                         activeImage === idx
                           ? "border-primary scale-105"
                           : "border-transparent opacity-70 hover:opacity-100"

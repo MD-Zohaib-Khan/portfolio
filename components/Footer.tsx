@@ -101,7 +101,7 @@ export default function Footer() {
           >
             {/* Logo lockup */}
             <div>
-              <h3 className="text-2xl font-extrabold tracking-tight bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h3 className="font-heading text-2xl font-extrabold tracking-tight bg-linear-to-r from-emerald-500 to-indigo-400 bg-clip-text text-transparent">
                 Zohaib Khan
               </h3>
               <p className="text-[11px] font-medium tracking-[0.16em] uppercase text-foreground/35 mt-0.5">
@@ -144,7 +144,7 @@ export default function Footer() {
             variants={itemVariants}
             className="md:col-span-2 space-y-4"
           >
-            <h4 className="text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
+            <h4 className="font-heading text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -167,7 +167,7 @@ export default function Footer() {
             variants={itemVariants}
             className="md:col-span-2 space-y-4"
           >
-            <h4 className="text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
+            <h4 className="font-heading text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -188,7 +188,7 @@ export default function Footer() {
             variants={itemVariants}
             className="md:col-span-4 space-y-4"
           >
-            <h4 className="text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
+            <h4 className="font-heading text-xs font-semibold tracking-[0.14em] uppercase text-foreground/40">
               Stay Updated
             </h4>
             <p className="text-sm text-foreground/50 leading-relaxed">
@@ -272,8 +272,8 @@ export default function Footer() {
             className="text-xs text-foreground/35 order-3 flex items-center gap-1"
           >
             Made with
-            <span className="text-rose-500 mx-0.5">♥</span>
-            by Zohaib Khan
+            <span className="text-rose-500 mx-0.5">💖</span>
+            by <span className="font-semibold">Zohaib Khan</span>
           </motion.p>
         </motion.div>
       </div>

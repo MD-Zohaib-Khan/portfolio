@@ -61,13 +61,13 @@ export default function About() {
               variants={itemVariants}
               className="mb-16 text-center md:text-left"
             >
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
                 <span className="text-foreground">About </span>
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
                   Me
                 </span>
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent rounded-full mx-auto md:mx-0" />
+              <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full mx-auto md:mx-0" />
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -78,7 +78,7 @@ export default function About() {
                 transition={{ type: "spring", stiffness: 120 }}
                 className="relative flex justify-center"
               >
-                <div className="relative w-[240px] sm:w-[280px] md:w-[320px] h-[320px] sm:h-[360px] md:h-[380px] rounded-3xl p-[2px] bg-gradient-to-br from-primary to-accent">
+                <div className="relative w-[240px] sm:w-[280px] md:w-[320px] h-[320px] sm:h-[360px] md:h-[380px] rounded-3xl p-[2px] bg-gradient-to-br from-indigo-500 to-emerald-400">
                   {/* Glass Card */}
                   <div className="relative w-full h-full rounded-3xl bg-black/40 backdrop-blur-xl overflow-hidden shadow-2xl group">
                     <Image
@@ -126,7 +126,7 @@ export default function About() {
                         className={`absolute ${msg.style} opacity-0 group-hover:opacity-100 transition-all duration-700 px-4 py-2 rounded-full text-xs font-medium bg-white/10 border border-primary/30 backdrop-blur-md text-white shadow-lg`}
                         style={{ transitionDelay: `${msg.delay}s` }}
                       >
-                        <span className="bg-gradient-to-r from-primary to-black bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
                           {msg.text}
                         </span>
                       </div>
@@ -215,7 +215,9 @@ export default function About() {
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold">{item.title}</h3>
+                        <h3 className="font-heading font-semibold">
+                          {item.title}
+                        </h3>
                         <p className="text-sm text-foreground/60">
                           {item.desc}
                         </p>

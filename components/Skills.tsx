@@ -32,7 +32,8 @@ export default function Skills() {
   const skillCategories = [
     {
       title: "AI Automation",
-      color: "from-emerald-500 to-teal-500",
+      accent: "emerald",
+      iconGradient: "from-emerald-500 to-emerald-300",
       skills: [
         "n8n",
         "AI Agents",
@@ -45,7 +46,8 @@ export default function Skills() {
     },
     {
       title: "Development",
-      color: "from-primary to-blue-500",
+      accent: "sky",
+      iconGradient: "from-sky-500 to-sky-300",
       skills: [
         "React",
         "TypeScript",
@@ -60,7 +62,8 @@ export default function Skills() {
     },
     {
       title: "Databases",
-      color: "from-purple-500 to-pink-500",
+      accent: "amber",
+      iconGradient: "from-amber-500 to-amber-300",
       skills: [
         "MS SQL Server",
         "MongoDB",
@@ -68,12 +71,13 @@ export default function Skills() {
         "MySQL",
         "Cassandra",
         "SQLite",
-        "Redis"
+        "Redis",
       ],
     },
     {
       title: "Tools & Platforms",
-      color: "from-blue-500 to-cyan-500",
+      accent: "violet",
+      iconGradient: "from-violet-500 to-violet-300",
       skills: [
         "Git",
         "GitHub",
@@ -87,6 +91,32 @@ export default function Skills() {
       ],
     },
   ];
+
+  // Maps each accent name to concrete Tailwind classes.
+  // Using a static lookup (rather than template-literal class names)
+  // ensures Tailwind's JIT compiler picks these up at build time.
+  const accentStyles: Record<string, { badge: string; iconBg: string }> = {
+    emerald: {
+      badge:
+        "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 hover:border-emerald-500/60 hover:bg-emerald-500/20 hover:shadow-emerald-500/20",
+      iconBg: "bg-emerald-500/20 group-hover:bg-emerald-500/30",
+    },
+    sky: {
+      badge:
+        "bg-sky-500/10 text-sky-400 border-sky-500/30 hover:border-sky-500/60 hover:bg-sky-500/20 hover:shadow-sky-500/20",
+      iconBg: "bg-sky-500/20 group-hover:bg-sky-500/30",
+    },
+    amber: {
+      badge:
+        "bg-amber-500/10 text-amber-400 border-amber-500/30 hover:border-amber-500/60 hover:bg-amber-500/20 hover:shadow-amber-500/20",
+      iconBg: "bg-amber-500/20 group-hover:bg-amber-500/30",
+    },
+    violet: {
+      badge:
+        "bg-violet-500/10 text-violet-400 border-violet-500/30 hover:border-violet-500/60 hover:bg-violet-500/20 hover:shadow-violet-500/20",
+      iconBg: "bg-violet-500/20 group-hover:bg-violet-500/30",
+    },
+  };
 
   return (
     <section
@@ -102,49 +132,52 @@ export default function Skills() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
               <span className="text-foreground">Technical </span>
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
                 Skills
               </span>
             </h2>
-            <div className="h-1 w-20 bg-linear-to-r from-primary to-accent rounded-full" />
+            <div className="h-1 w-20 bg-linear-to-r from-emerald-500 to-teal-400 rounded-full" />
           </motion.div>
 
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group"
-              >
-                {/* Category Header */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div
-                    className={`w-12 h-12 rounded-lg bg-linear-to-r ${category.color} opacity-20 flex items-center justify-center group-hover:opacity-30 transition-opacity`}
-                  />
-                  <h3 className="text-2xl font-bold text-foreground">
-                    {category.title}
-                  </h3>
-                </div>
+            {skillCategories.map((category, categoryIndex) => {
+              const styles = accentStyles[category.accent];
+              return (
+                <motion.div
+                  key={categoryIndex}
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                  className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group"
+                >
+                  {/* Category Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div
+                      className={`w-12 h-12 rounded-lg bg-linear-to-r ${category.iconGradient} opacity-20 flex items-center justify-center group-hover:opacity-30 transition-opacity`}
+                    />
+                    <h3 className="font-heading text-2xl font-bold text-foreground">
+                      {category.title}
+                    </h3>
+                  </div>
 
-                {/* Skills */}
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skillIndex}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-4 py-2 bg-linear-to-r ${category.color} bg-clip-text text-transparent border border-primary/30 rounded-full text-sm font-medium hover:border-primary/60 transition-all duration-300 cursor-default hover:shadow-lg hover:shadow-primary/20`}
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-3">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.div
+                        key={skillIndex}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`px-4 py-2 border rounded-full text-sm font-medium transition-all duration-300 cursor-default hover:shadow-lg ${styles.badge}`}
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Proficiency Metrics */}
@@ -168,7 +201,7 @@ export default function Skills() {
                     inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
                   }
                   transition={{ delay: 0.5 + index * 0.2 }}
-                  className="text-4xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent mb-2"
+                  className="text-4xl font-bold bg-linear-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent mb-2"
                 >
                   {metric.value}
                 </motion.p>

@@ -110,9 +110,9 @@ export default function Contact() {
               Available for work
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
               <span className="text-foreground">Let&apos;s </span>
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
                 Connect
               </span>
             </h2>
@@ -156,7 +156,7 @@ export default function Contact() {
                   <p className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/40 mb-0.5">
                     {info.label}
                   </p>
-                  <p className="text-sm font-semibold text-foreground truncate group-hover:text-primary transition-colors">
+                  <p className="text-sm font-semibold text-foreground truncate group-hover:text-sky-400 transition-colors">
                     {info.value}
                   </p>
                   <p className="text-xs text-foreground/40 mt-0.5">
@@ -174,7 +174,7 @@ export default function Contact() {
             <div className="bg-card border border-border rounded-2xl p-7 sm:p-9 shadow-sm hover:border-primary/30 transition-all duration-300">
               {/* Form header */}
               <div className="mb-7 pb-6 border-b border-border">
-                <h3 className="text-lg font-bold text-foreground tracking-tight">
+                <h3 className="font-heading text-lg font-bold text-foreground tracking-tight">
                   Send a Message
                 </h3>
                 <p className="text-sm text-foreground/45 mt-1">
@@ -266,7 +266,7 @@ export default function Contact() {
                   className={`w-full py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2.5 transition-all duration-300 ${
                     isSubmitted
                       ? "bg-emerald-500/15 text-emerald-500 border border-emerald-500/30 cursor-default"
-                      : "bg-linear-to-r from-primary to-accent text-primary-foreground hover:shadow-lg hover:shadow-primary/30"
+                      : "bg-linear-to-r from-emerald-500 to-teal-400 text-slate-900 hover:shadow-lg hover:shadow-emerald-500/30"
                   }`}
                 >
                   {isSubmitted ? (

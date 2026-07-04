@@ -74,10 +74,10 @@ export default function Hero() {
         <motion.div variants={itemVariants} className="mb-6">
           {" "}
           {/* Keep mb-6 for spacing before tagline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 bg-clip-text text-transparent">
             Zohaib Khan
           </h1>
-          <p className="text-xl sm:text-2xl text-foreground/70 italic font-medium mt-2">
+          <p className="text-xl sm:text-2xl text-foreground/70 font-medium mt-2 tracking-[0.10em]">
             Full Stack MERN Developer & AI Automation Specialist
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-xl sm:text-2xl text-foreground/70 mb-8 italic font-light"
         >
-          I, with the <span className="text-primary font-bold">We</span>{" "}
+          I, with the <span className="text-sky-400 font-bold">We</span>{" "}
           Mentality
         </motion.p>
 
@@ -110,7 +110,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection("projects")}
-            className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+            className="px-8 py-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300"
           >
             View My Work
           </motion.button>

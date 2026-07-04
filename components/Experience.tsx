@@ -83,19 +83,19 @@ export default function Experience() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
               <span className="text-foreground">Professional </span>
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
                 Experience
               </span>
             </h2>
-            <div className="h-1 w-20 bg-linear-to-r from-primary to-accent rounded-full" />
+            <div className="h-1 w-20 bg-linear-to-r from-emerald-500 to-teal-400 rounded-full" />
           </motion.div>
 
           {/* Timeline */}
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-primary via-accent to-primary transform md:-translate-x-1/2" />
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-emerald-500 via-teal-400 to-emerald-500 transform md:-translate-x-1/2" />
 
             {/* Experience items */}
             {experiences.map((exp, index) => (
@@ -112,7 +112,7 @@ export default function Experience() {
                     repeat: Infinity,
                     delay: index * 0.2,
                   }}
-                  className="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-linear-to-r from-primary to-accent rounded-full transform md:-translate-x-1.5 border-4 border-background"
+                  className="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-linear-to-r from-emerald-500 to-teal-400 rounded-full transform md:-translate-x-1.5 border-4 border-background"
                 />
 
                 {/* Card */}
@@ -123,14 +123,14 @@ export default function Experience() {
                   {/* Header */}
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-foreground">
+                      <h3 className="font-heading text-xl font-bold text-foreground">
                         {exp.role}
                       </h3>
-                      <p className="text-primary font-semibold">
+                      <p className="text-sky-400 font-semibold">
                         {exp.company}
                       </p>
                     </div>
-                    <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium whitespace-nowrap">
+                    <span className="px-3 py-1 bg-sky-500/20 text-sky-400 text-xs rounded-full font-medium whitespace-nowrap">
                       {exp.duration}
                     </span>
                   </div>
