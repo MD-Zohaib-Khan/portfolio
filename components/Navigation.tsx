@@ -20,11 +20,17 @@ export default function Navigation() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
+    setIsOpen(false);
+
+    // Wait for the mobile menu's collapse animation to finish before
+    // scrolling — running both animations at once causes scrollIntoView
+    // to get interrupted/cancelled on mobile browsers.
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300); // matches the mobile menu's transition duration (0.25s) + buffer
   };
 
   const navItems = [
@@ -85,7 +91,11 @@ export default function Navigation() {
                     <motion.span
                       layoutId="nav-hover-pill"
                       className="absolute inset-0 rounded-full bg-linear-to-r from-emerald-500/15 via-teal-400/15 to-indigo-500/15 border border-emerald-500/20"
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 350,
+                        damping: 30,
+                      }}
                     />
                   )}
                   <span className="relative z-10">{item.label}</span>

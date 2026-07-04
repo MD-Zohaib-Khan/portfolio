@@ -123,7 +123,7 @@ export default function About() {
                     ].map((msg, i) => (
                       <div
                         key={i}
-                        className={`absolute ${msg.style} opacity-0 group-hover:opacity-100 transition-all duration-700 px-4 py-2 rounded-full text-xs font-medium bg-white/10 border border-primary/30 backdrop-blur-md text-white shadow-lg`}
+                        className={`absolute ${msg.style} opacity-0 group-hover:opacity-100 transition-all duration-700 px-4 py-2 rounded-full text-xs font-medium bg-black/50 border border-primary/30 backdrop-blur-md text-white shadow-lg`}
                         style={{ transitionDelay: `${msg.delay}s` }}
                       >
                         <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
@@ -141,7 +141,7 @@ export default function About() {
                         Zohaib Khan
                       </p>
                       <p className="text-xs text-white/70">
-                        Full Stack & AI Specialist
+                        Full Stack Developer & AI Specialist
                       </p>
                     </div>
                   </div>
@@ -151,9 +151,9 @@ export default function About() {
                 <motion.div
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-5 -right-1 bg-card border border-primary/30 rounded-xl px-4 py-2 shadow-xl backdrop-blur-md"
+                  className="absolute -bottom-5 -right-1 bg-card border border-sky-500/30 rounded-xl px-4 py-2 shadow-xl backdrop-blur-md"
                 >
-                  <p className="text-xs text-primary font-semibold">
+                  <p className="text-xs text-sky-400 font-semibold">
                     Available for Work
                   </p>
                 </motion.div>
