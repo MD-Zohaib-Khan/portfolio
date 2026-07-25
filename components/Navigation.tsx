@@ -66,7 +66,7 @@ export default function Navigation() {
             >
               <div className="relative w-9 h-9 rounded-lg overflow-hidden ring-1 ring-white/10 group-hover:ring-emerald-500/50 transition-all duration-300">
                 <Image
-                  src="/Zohaib's Logo.png"
+                  src="https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/Zohaib's Logo.png"
                   alt="Zohaib Khan logo"
                   fill
                   className="object-cover"

@@ -19,19 +19,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/ZK.jpg",
+        url: "https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/ZK.jpg",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/ZK.jpg",
+        url: "https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/ZK.jpg",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/ZK.jpg",
+        url: "https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/ZK.jpg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/apple-icon.png",
   },
 };
 

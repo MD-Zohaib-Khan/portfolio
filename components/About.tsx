@@ -82,7 +82,7 @@ export default function About() {
                   {/* Glass Card */}
                   <div className="relative w-full h-full rounded-3xl bg-black/40 backdrop-blur-xl overflow-hidden shadow-2xl group">
                     <Image
-                      src="/id_card.jpeg"
+                      src="https://pub-fa26f07d70dc487b8fbe653d6ddebc87.r2.dev/id_card.jpeg"
                       alt="Profile"
                       fill
                       className="object-cover opacity-90 group-hover:scale-110 transition duration-700"
