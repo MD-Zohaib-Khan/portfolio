@@ -121,7 +121,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 px-4 sm:px-6 lg:px-8 relative bg-secondary/5"
+      className="py-12 px-4 sm:px-6 lg:px-8 relative bg-secondary/5"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -131,7 +131,8 @@ export default function Skills() {
           animate={inView ? "visible" : "hidden"}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="mb-16">
+          <motion.div variants={itemVariants} className="mb-8">
+
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
               <span className="text-foreground">Technical </span>
               <span className="bg-linear-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">

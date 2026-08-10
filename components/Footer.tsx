@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -61,17 +61,17 @@ export default function Footer() {
     "Team Mentoring",
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 14 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1] as const },
     },
   };
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import ParticleNetwork from "@/components/ParticleNetwork";
 
 const BACKGROUND_SCROLL_TEXT =
   "Full Stack MERN Developer & AI Automation Specialist ";
@@ -37,10 +38,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen pt-20 flex items-center justify-center relative overflow-hidden"
+      className="h-screen pt-16 flex items-center justify-center relative overflow-hidden"
     >
+      {/* Interactive Background Particle Constellation Effect */}
+      <ParticleNetwork className="z-0 opacity-80" />
+
       {/* Background gradient effects */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl opacity-50 animate-float" />
         <div
           className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/20 rounded-full blur-3xl opacity-50 animate-float"
@@ -63,21 +67,19 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Foreground Content */}
+      {/* Foreground Content with Frosted Glass Backdrop Blur */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-10 max-w-4xl mx-auto px-6 py-6 sm:px-10 sm:py-8 text-center rounded-3xl backdrop-blur-md bg-background/40 border border-emerald-500/15 shadow-2xl shadow-emerald-500/10"
       >
         {/* Name and Specialist Title */}
-        <motion.div variants={itemVariants} className="mb-6">
-          {" "}
-          {/* Keep mb-6 for spacing before tagline */}
-          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 bg-clip-text text-transparent">
+        <motion.div variants={itemVariants} className="mb-4">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 bg-clip-text text-transparent">
             Zohaib Khan
           </h1>
-          <p className="text-xl sm:text-2xl text-foreground/70 font-medium mt-2 tracking-[0.10em]">
+          <p className="text-lg sm:text-xl text-foreground/70 font-medium mt-1 tracking-[0.10em]">
             Full Stack MERN Developer & AI Automation Specialist
           </p>
         </motion.div>
@@ -85,7 +87,7 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-xl sm:text-2xl text-foreground/70 mb-8 italic font-light"
+          className="text-lg sm:text-xl text-foreground/70 mb-4 italic font-light"
         >
           I, with the <span className="text-sky-400 font-bold">We</span>{" "}
           Mentality
@@ -94,7 +96,7 @@ export default function Hero() {
         {/* Description */}
         <motion.p
           variants={itemVariants}
-          className="text-lg text-foreground/60 max-w-2.5xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg text-foreground/60 max-w-2.5xl mx-auto mb-6 leading-relaxed"
         >
           Crafting beautiful, performant web experiences and intelligent AI
           automations with modern technologies. I believe in building solutions
@@ -104,13 +106,13 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-6"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection("projects")}
-            className="px-8 py-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300"
+            className="px-7 py-2.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300"
           >
             View My Work
           </motion.button>
@@ -118,16 +120,16 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection("contact")}
-            className="px-8 py-3 border border-primary text-foreground font-semibold rounded-lg hover:bg-primary/10 transition-all duration-300"
+            className="px-7 py-2.5 border border-primary text-foreground font-semibold rounded-lg hover:bg-primary/10 transition-all duration-300"
           >
             Get In Touch
           </motion.button>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Social Links with Premium Radiant Hover Effects & Tooltips */}
         <motion.div
           variants={itemVariants}
-          className="flex justify-center gap-6 mb-16"
+          className="flex justify-center items-center gap-4 mb-5"
         >
           {[
             {
@@ -146,34 +148,42 @@ export default function Hero() {
               label: "Email",
             },
           ].map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -5, scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all duration-300 group"
-            >
-              <social.icon className="w-5 h-5 text-primary group-hover:text-accent transition-colors" />
-            </motion.a>
+            <div key={index} className="relative group">
+              <motion.a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.12, rotate: index % 2 === 0 ? 5 : -5 }}
+                whileTap={{ scale: 0.92 }}
+                className="w-11 h-11 rounded-xl bg-slate-900/70 backdrop-blur-md border border-emerald-500/30 flex items-center justify-center shadow-lg hover:border-emerald-400 hover:bg-gradient-to-br hover:from-emerald-500/20 hover:to-indigo-500/20 hover:shadow-[0_0_25px_rgba(52,211,153,0.45)] transition-all duration-300"
+              >
+                <social.icon className="w-5 h-5 text-emerald-400 group-hover:text-white transition-colors duration-300" />
+              </motion.a>
+              
+              {/* Tooltip Popup */}
+              <div className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none px-2.5 py-0.5 bg-slate-900/90 text-emerald-300 text-xs font-semibold rounded-md border border-emerald-500/30 shadow-md whitespace-nowrap z-30">
+                {social.label}
+              </div>
+            </div>
           ))}
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator with pulse ring */}
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex justify-center"
         >
           <button
             onClick={() => scrollToSection("about")}
-            className="p-2 rounded-full border border-foreground/20 hover:border-primary transition-colors"
+            aria-label="Scroll to About"
+            className="p-2.5 rounded-full bg-slate-900/60 border border-emerald-500/30 hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] transition-all duration-300 group"
           >
-            <ArrowDown className="w-6 h-6 text-primary" />
+            <ArrowDown className="w-4 h-4 text-emerald-400 group-hover:text-white transition-colors" />
           </button>
         </motion.div>
       </motion.div>
     </section>
   );
 }
+
