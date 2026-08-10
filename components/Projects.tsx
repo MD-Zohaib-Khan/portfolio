@@ -188,7 +188,7 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="projects" className="py-12 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
             ref={ref}
@@ -197,7 +197,8 @@ export default function Projects() {
             animate={inView ? "visible" : "hidden"}
           >
             {/* Header */}
-            <motion.div variants={itemVariants} className="mb-16">
+            <motion.div variants={itemVariants} className="mb-8">
+
               <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-4">
                 <span className="text-foreground">Featured </span>
                 <span className="bg-linear-to-r from-emerald-500 via-teal-400 to-indigo-500 bg-clip-text text-transparent">

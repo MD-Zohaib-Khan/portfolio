@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   Mail,
@@ -25,7 +25,7 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -33,12 +33,12 @@ export default function Contact() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const },
     },
   };
 
@@ -91,7 +91,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-175 h-100 rounded-full bg-primary/5 blur-3xl" />
@@ -104,7 +104,8 @@ export default function Contact() {
           animate={inView ? "visible" : "hidden"}
         >
           {/* ── Header ── */}
-          <motion.div variants={itemVariants} className="mb-16 text-center">
+          <motion.div variants={itemVariants} className="mb-8 text-center">
+
             <div className="inline-flex items-center gap-2.5 mb-5 px-4 py-1.5 rounded-full border border-border bg-card text-xs font-medium tracking-[0.14em] uppercase text-foreground/50">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Available for work
